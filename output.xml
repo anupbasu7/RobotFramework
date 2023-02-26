@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<robot generator="Robot 6.0.2 (Python 3.10.2 on win32)" generated="20230226 10:20:51.411" rpa="false" schemaversion="3">
+<robot generator="Robot 6.0.2 (Python 3.10.2 on win32)" generated="20230226 10:33:43.687" rpa="false" schemaversion="3">
 <suite id="s1" name="Testdemo2" source="E:\UDEMY\Robotframework\RobotFramework\tests\testdemo2.robot">
 <test id="s1-t1" name="TC To Validate Login form" line="13">
 <kw name="open the browser with the Mortgage payment url" library="resource" type="SETUP">
@@ -7,75 +7,75 @@
 <arg>Chrome</arg>
 <arg>executable_path=/webdriver/chromedriver.exe</arg>
 <doc>Creates an instance of Selenium WebDriver.</doc>
-<msg timestamp="20230226 10:20:51.921" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
-<status status="PASS" starttime="20230226 10:20:51.921" endtime="20230226 10:20:54.199"/>
+<msg timestamp="20230226 10:33:44.229" level="INFO">Creating an instance of the Chrome WebDriver.</msg>
+<status status="PASS" starttime="20230226 10:33:44.229" endtime="20230226 10:33:46.697"/>
 </kw>
 <kw name="Go To" library="SeleniumLibrary">
 <arg>https://rahulshettyacademy.com/loginpagePractise/</arg>
 <doc>Navigates the current browser window to the provided ``url``.</doc>
-<msg timestamp="20230226 10:20:54.200" level="INFO">Opening url 'https://rahulshettyacademy.com/loginpagePractise/'</msg>
-<status status="PASS" starttime="20230226 10:20:54.200" endtime="20230226 10:20:55.224"/>
+<msg timestamp="20230226 10:33:46.698" level="INFO">Opening url 'https://rahulshettyacademy.com/loginpagePractise/'</msg>
+<status status="PASS" starttime="20230226 10:33:46.697" endtime="20230226 10:33:47.846"/>
 </kw>
-<status status="PASS" starttime="20230226 10:20:51.920" endtime="20230226 10:20:55.224"/>
+<status status="PASS" starttime="20230226 10:33:44.228" endtime="20230226 10:33:47.846"/>
 </kw>
 <kw name="Fill the login form">
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id:username</arg>
 <arg>${user_name}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230226 10:20:55.261" level="INFO">Typing text 'Anup' into text field 'id:username'.</msg>
-<status status="PASS" starttime="20230226 10:20:55.258" endtime="20230226 10:20:55.716"/>
+<msg timestamp="20230226 10:33:47.860" level="INFO">Typing text 'Anup' into text field 'id:username'.</msg>
+<status status="PASS" starttime="20230226 10:33:47.858" endtime="20230226 10:33:48.290"/>
 </kw>
 <kw name="Input Text" library="SeleniumLibrary">
 <arg>id:password</arg>
 <arg>${invalid_password}</arg>
 <doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
-<msg timestamp="20230226 10:20:55.718" level="INFO">Typing text 'LetGo' into text field 'id:password'.</msg>
-<status status="PASS" starttime="20230226 10:20:55.717" endtime="20230226 10:20:56.003"/>
+<msg timestamp="20230226 10:33:48.292" level="INFO">Typing text 'LetGo' into text field 'id:password'.</msg>
+<status status="PASS" starttime="20230226 10:33:48.291" endtime="20230226 10:33:48.520"/>
 </kw>
 <kw name="Click Button" library="SeleniumLibrary">
 <arg>signInBtn</arg>
 <doc>Clicks the button identified by ``locator``.</doc>
-<msg timestamp="20230226 10:20:56.005" level="INFO">Clicking button 'signInBtn'.</msg>
-<status status="PASS" starttime="20230226 10:20:56.003" endtime="20230226 10:20:56.165"/>
+<msg timestamp="20230226 10:33:48.523" level="INFO">Clicking button 'signInBtn'.</msg>
+<status status="PASS" starttime="20230226 10:33:48.521" endtime="20230226 10:33:48.692"/>
 </kw>
-<status status="PASS" starttime="20230226 10:20:55.258" endtime="20230226 10:20:56.166"/>
+<status status="PASS" starttime="20230226 10:33:47.858" endtime="20230226 10:33:48.692"/>
 </kw>
 <kw name="Wait until it checks and display error message">
 <kw name="Wait Until Element Is Visible" library="SeleniumLibrary">
 <arg>${Error_Message_Login}</arg>
 <doc>Waits until the element ``locator`` is visible.</doc>
-<status status="PASS" starttime="20230226 10:20:56.167" endtime="20230226 10:20:58.319"/>
+<status status="PASS" starttime="20230226 10:33:48.694" endtime="20230226 10:33:50.883"/>
 </kw>
-<status status="PASS" starttime="20230226 10:20:56.167" endtime="20230226 10:20:58.320"/>
+<status status="PASS" starttime="20230226 10:33:48.693" endtime="20230226 10:33:50.883"/>
 </kw>
 <kw name="verify error message is correct">
 <kw name="Get Text" library="SeleniumLibrary">
 <var>${result}</var>
 <arg>${Error_Message_Login}</arg>
 <doc>Returns the text value of the element identified by ``locator``.</doc>
-<msg timestamp="20230226 10:20:58.406" level="INFO">${result} = Incorrect username/password.</msg>
-<status status="PASS" starttime="20230226 10:20:58.325" endtime="20230226 10:20:58.406"/>
+<msg timestamp="20230226 10:33:50.933" level="INFO">${result} = Incorrect username/password.</msg>
+<status status="PASS" starttime="20230226 10:33:50.886" endtime="20230226 10:33:50.933"/>
 </kw>
 <kw name="Should Be Equal As Strings" library="BuiltIn">
 <arg>${result}</arg>
 <arg>Incorrect username/password.</arg>
 <doc>Fails if objects are unequal after converting them to strings.</doc>
-<status status="PASS" starttime="20230226 10:20:58.406" endtime="20230226 10:20:58.407"/>
+<status status="PASS" starttime="20230226 10:33:50.933" endtime="20230226 10:33:50.934"/>
 </kw>
-<status status="PASS" starttime="20230226 10:20:58.323" endtime="20230226 10:20:58.408"/>
+<status status="PASS" starttime="20230226 10:33:50.884" endtime="20230226 10:33:50.935"/>
 </kw>
 <kw name="Close Browser Session" library="resource" type="TEARDOWN">
 <kw name="Close Browser" library="SeleniumLibrary">
 <doc>Closes the current browser.</doc>
-<status status="PASS" starttime="20230226 10:20:58.411" endtime="20230226 10:21:00.702"/>
+<status status="PASS" starttime="20230226 10:33:50.938" endtime="20230226 10:33:53.229"/>
 </kw>
-<status status="PASS" starttime="20230226 10:20:58.410" endtime="20230226 10:21:00.702"/>
+<status status="PASS" starttime="20230226 10:33:50.937" endtime="20230226 10:33:53.230"/>
 </kw>
-<status status="PASS" starttime="20230226 10:20:51.919" endtime="20230226 10:21:00.703"/>
+<status status="PASS" starttime="20230226 10:33:44.226" endtime="20230226 10:33:53.231"/>
 </test>
 <doc>To validate the login form</doc>
-<status status="PASS" starttime="20230226 10:20:51.416" endtime="20230226 10:21:00.708"/>
+<status status="PASS" starttime="20230226 10:33:43.690" endtime="20230226 10:33:53.237"/>
 </suite>
 <statistics>
 <total>
