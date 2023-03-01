@@ -8,11 +8,13 @@ Library         SeleniumLibrary
 *** Variables ***
 ${user_name}        Anup
 ${invalid_password}     LetGo
+${url}          https://rahulshettyacademy.com/loginpagePractise/
+
 *** Keywords ***
 
 open the browser with the Mortgage payment url
     Create Webdriver    Chrome  executable_path=/webdriver/chromedriver.exe
-    Go To    https://rahulshettyacademy.com/loginpagePractise/
+    Go To    ${url}
 #    Set Selenium Implicit Wait    5
 
 Close Browser Session
