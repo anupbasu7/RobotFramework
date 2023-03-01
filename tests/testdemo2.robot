@@ -19,6 +19,8 @@ TC To Validate Login form
 TC To Validate Cards display in the Shopping Page
     Fill the login form     ${user_name}    ${valid_password}
     wait until element is located in the page       ${shop_page_load}
+    Verify Card titles in the Shop page
+
 
 
 *** Keywords ***
@@ -48,5 +50,12 @@ verify error message is correct
     #OR we can use the below keyword
 #    Element Text Should Be    ${Error_Message_Login}    Incorrect username/password.
 
-
+Verify Card titles in the Shop page
+    #create a list
+    @{expectedList}=   Create List     iphone X    Samsung Note 8      Nokia Edge      Blackberry
+    ${elementList}=   Get WebElements    css:.card-title
+    FOR    ${elements}    IN   @{elementList}
+    #python syntax
+        log     ${elements.text}
+    END
     
