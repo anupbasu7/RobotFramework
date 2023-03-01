@@ -6,8 +6,9 @@ Documentation   A resource file with reusable keywords and variables.
 Library         SeleniumLibrary
 
 *** Variables ***
-${user_name}        Anup
+${user_name}        rahulshettyacademy
 ${invalid_password}     LetGo
+${valid_password}       learning
 ${url}          https://rahulshettyacademy.com/loginpagePractise/
 
 *** Keywords ***
