@@ -21,6 +21,7 @@ TC To Validate Cards display in the Shopping Page
     Fill the login form     ${user_name}    ${valid_password}
     wait until element is located in the page       ${shop_page_load}
     Verify Card titles in the Shop page
+    Select the Card     Blackberry
 
 
 
@@ -63,4 +64,13 @@ Verify Card titles in the Shop page
     END
     Lists Should Be Equal    ${expectedList}    ${actualList}
     #Note: to create list we use @ sign and to use the list we use $ sign
-    
+
+Select the Card     
+        [Arguments]     ${cardName}
+        ${elementList}=   Get WebElements    css:.card-title
+        ${index}=   Set Variable    1
+        FOR    ${elements}   IN    @{elementList}
+               Exit For Loop If  '${cardName}' == '${elements.text}'
+               ${index}=    Evaluate    ${index} + 1
+        END
+        Click Button        xpath:(//*[@class='card-footer'])[${index}]/button
