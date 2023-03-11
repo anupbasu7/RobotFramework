@@ -1,6 +1,7 @@
 *** Settings ***
 Documentation   To validate the login form
 Library  SeleniumLibrary
+Library     Collections
 Library    Telnet
 Test Setup      open the browser with the Mortgage payment url
 Test Teardown       Close Browser Session
@@ -54,8 +55,12 @@ Verify Card titles in the Shop page
     #create a list
     @{expectedList}=   Create List     iphone X    Samsung Note 8      Nokia Edge      Blackberry
     ${elementList}=   Get WebElements    css:.card-title
+    @{actualList} =  Create List
     FOR    ${elements}    IN   @{elementList}
     #python syntax
         log     ${elements.text}
+        Append To List    ${actualList}     ${elements.text}
     END
+    Lists Should Be Equal    ${expectedList}    ${actualList}
+    #Note: to create list we use @ sign and to use the list we use $ sign
     
